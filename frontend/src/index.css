@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-white font-sans antialiased;
+    background-color: #0f172a;
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-primary/25;
+  }
+
+  .btn-secondary {
+    @apply bg-card border border-border hover:border-primary/50 text-white font-medium px-5 py-2 rounded-xl transition-all duration-200 hover:bg-slate-700;
+  }
+
+  .input-field {
+    @apply w-full bg-bg border border-border rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-xl;
+  }
+
+  .badge-easy {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .badge-medium {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .badge-hard {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+
+  .tag {
+    @apply text-xs px-2.5 py-1 rounded-full bg-slate-700 text-slate-300 border border-slate-600;
+  }
+}
+
+/* Gradient mesh background */
+.gradient-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+              #0f172a;
+}
+
+/* Code editor container */
+.editor-container .monaco-editor {
+  border-radius: 8px;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+/* Prose styling for problem descriptions */
+.prose-dark {
+  @apply text-slate-300 leading-relaxed;
+}
+
+.prose-dark code {
+  @apply text-blue-300 bg-slate-800 px-1.5 py-0.5 rounded font-mono text-sm;
+}
+
+.prose-dark strong {
+  @apply text-white font-semibold;
+}
+
+.prose-dark em {
+  @apply text-slate-200 italic;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Animate gradient */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
