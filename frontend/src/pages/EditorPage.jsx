@@ -54,7 +54,7 @@ export default function EditorPage() {
   useEffect(() => {
     const fetchProblem = async () => {
       try {
-        const res = await axios.get(`/api/problems/${slug}`);
+        const res = await axios.get(`https://coding-portal-backend-enjf.onrender.com/api/problems/${slug}`);
         setProblem(res.data.problem);
         const starter = res.data.problem.starterCode?.javascript || '// Write your solution here\n';
         setCode(starter);
@@ -81,7 +81,7 @@ export default function EditorPage() {
     setOutput('');
     setRunError(false);
     try {
-      const res = await axios.post('/api/code/run', { code, language });
+      const res = await axios.post('https://coding-portal-backend-enjf.onrender.com/api/code/run', { code, language });
       setOutput(res.data.output || 'No output');
       setRunError(res.data.isError || false);
     } catch (err) {

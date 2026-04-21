@@ -24,7 +24,7 @@ export default function ProblemsPage() {
   useEffect(() => {
     const fetchProblems = async () => {
       try {
-        const res = await axios.get('/api/problems');
+        const res = await axios.get('https://coding-portal-backend-enjf.onrender.com/api/problems');
         setProblems(res.data.problems);
       } catch (err) {
         setError(err.response?.data?.message || 'Failed to load problems.');

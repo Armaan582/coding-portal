@@ -23,7 +23,7 @@ export default function LoginPage() {
     }
     setLoading(true);
     try {
-      const res = await axios.post('/api/auth/login', form);
+      const res = await axios.post('https://coding-portal-backend-enjf.onrender.com/api/auth/login', form);
       login(res.data.user, res.data.token);
       navigate('/problems');
     } catch (err) {

@@ -35,7 +35,7 @@ export default function SignupPage() {
 
     setLoading(true);
     try {
-      const res = await axios.post('/api/auth/signup', { username, email, password });
+      const res = await axios.post('https://coding-portal-backend-enjf.onrender.com/api/auth/signup', { username, email, password });
       login(res.data.user, res.data.token);
       navigate('/problems');
     } catch (err) {
